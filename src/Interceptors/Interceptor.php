@@ -6,23 +6,16 @@ use Ilias\Helper\Helper;
 
 class Interceptor
 {
-    private static bool $booted = false;
+    private static bool $interceptor_booted = false;
 
     public static function boot()
     {
-        if (self::$booted) {
+        if (self::$interceptor_booted) {
             return;
         }
 
         include_once Helper::rootDir() . 'index.php';
 
-        self::$booted = true;
-    }
-
-    public static function __callStatic($name, $arguments)
-    {
-        self::boot();
-
-        return static::__callStatic($name, $arguments);
+        self::$interceptor_booted = true;
     }
 }

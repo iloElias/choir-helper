@@ -2,6 +2,7 @@
 
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 $rules = [
     '@PSR12' => true,
@@ -18,8 +19,9 @@ $rules = [
 
 $finder = Finder::create()
     ->in([
-        __DIR__.'/src',
-        __DIR__.'/tests',
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
+        __DIR__ . '/config',
     ])
     ->name('*.php')
     ->notName('*.blade.php')
@@ -28,8 +30,9 @@ $finder = Finder::create()
 ;
 
 return (new Config())
-    ->setFinder($finder)
+    ->setParallelConfig(ParallelConfigFactory::detect())
     ->setRules($rules)
+    ->setFinder($finder)
     ->setRiskyAllowed(false)
     ->setUsingCache(true)
 ;

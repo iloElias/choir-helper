@@ -42,8 +42,15 @@ if (!function_exists('root_dir')) {
 }
 
 if (!function_exists('dir_files')) {
-    function dir_files(string $dir)
+    function dir_files(string $dir, bool $recursive = false, bool $nested = false, int $maxDepth = 8)
     {
-        return Ilias\Helper\Helper::dirFiles($dir);
+        return Ilias\Helper\Helper::dirFiles($dir, $recursive, $nested, $maxDepth);
+    }
+}
+
+if (!function_exists('view')) {
+    function view(string $view, array $data = [])
+    {
+        return Ilias\Helper\View::view($view, $data);
     }
 }
