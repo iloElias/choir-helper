@@ -19,12 +19,10 @@ $rules = [
 
 $finder = Finder::create()
     ->in([
-        __DIR__ . '/src',
-        __DIR__ . '/tests',
-        __DIR__ . '/config',
+        __DIR__,
     ])
-    ->name('*.php')
-    ->notName('*.blade.php')
+    ->name(['*.php', '*.phtml'])
+    ->notName(['*.blade.php'])
     ->ignoreDotFiles(true)
     ->ignoreVCS(true)
 ;

@@ -16,7 +16,7 @@ class View extends Interceptor
         if (!is_dir($viewDir)) {
             throw new \Exception("View directory not found: {$viewDir}");
         }
-        
+
         $viewPath = self::viewPath($viewDir, $view);
         $viewFile = self::viewFile($viewDir, $view);
 
@@ -24,7 +24,7 @@ class View extends Interceptor
         if (empty($candidates)) {
             throw new \Exception("View directory is empty: {$viewPath}");
         }
-        
+
         $found = self::resolve($candidates, $viewFile);
         if (empty($found)) {
             throw new \Exception("View not found: {$viewFile} (tried {$viewPath})");
@@ -33,7 +33,7 @@ class View extends Interceptor
         if ($metches > 1) {
             throw new \Exception("Multiple views found: {$viewFile} (tried {$viewPath})");
         }
-        
+
         return self::render($viewPath . DIRECTORY_SEPARATOR . array_first($found), $data);
     }
 
@@ -42,7 +42,7 @@ class View extends Interceptor
         $viewParts = explode('.', $view);
         array_pop($viewParts);
 
-        $dirPath = $viewDir . ($viewParts ? implode(DIRECTORY_SEPARATOR, $viewParts) . DIRECTORY_SEPARATOR : '');    
+        $dirPath = $viewDir . ($viewParts ? implode(DIRECTORY_SEPARATOR, $viewParts) . DIRECTORY_SEPARATOR : '');
         return $dirPath;
     }
 
@@ -70,5 +70,5 @@ class View extends Interceptor
         include $view;
         return ob_get_clean();
     }
-    
+
 }
