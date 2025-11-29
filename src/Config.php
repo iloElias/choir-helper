@@ -8,13 +8,15 @@ class Config
 
     private static function loadConfig()
     {
+        $rootDir = App::rootDir();
+
         if (!isset(self::$config)) {
-            self::$config = Helper::dirFiles(Helper::rootDir() . 'config');
+            self::$config = Helper::dirFiles($rootDir . 'config');
 
             foreach (self::$config as $file) {
                 $key = pathinfo($file, PATHINFO_FILENAME);
 
-                $required = require Helper::rootDir() . 'config/' . $file;
+                $required = require $rootDir . 'config/' . $file;
 
                 self::$config[$key] = self::parseConfig($required);
             }

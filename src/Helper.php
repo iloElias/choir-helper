@@ -75,12 +75,12 @@ class Helper
 
     public static function configDir()
     {
-        return self::rootDir() . 'config/';
+        return App::rootDir() . 'config/';
     }
 
     public static function resourcesDir()
     {
-        return self::rootDir() . 'resources/';
+        return App::rootDir() . 'resources/';
     }
 
     public static function viewsDir()
@@ -90,6 +90,6 @@ class Helper
 
     public static function publicDir()
     {
-        return self::rootDir() . 'public/';
+        return App::rootDir() . 'public/';
     }
 }
