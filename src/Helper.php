@@ -17,7 +17,7 @@ class Helper
             return;
         }
 
-        include_once App::rootDir() . 'index.php';
+        include_once self::rootDir() . 'index.php';
 
         self::$helper_booted = true;
     }
