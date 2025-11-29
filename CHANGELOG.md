@@ -26,6 +26,31 @@ This format follows a lightweight and clear structure suitable for personal libr
 
 ---
 
+## [v0.1.1] - 2025-11-29
+
+### 🚀 New Features
+
+- Added `App` class for application configuration and root directory management
+- Added `App::configure()` method to set the application root directory
+- Added `App::rootDir()` method to retrieve the configured root directory
+
+### 🐛 Fixes
+
+- N/A
+
+### 🔧 Internal / Refactor
+
+- Removed `Interceptor` class dependency from `Config`, `Env`, `Helper`, and `View` classes
+- Moved `boot()` method from `Interceptor` to `Helper` class directly
+- Simplified class hierarchy by removing inheritance from `Interceptor`
+- Deleted unused `Interceptors/Interceptor.php` file
+
+### 📝 Notes
+
+- Version bumped from 0.1.0 to 0.1.1
+
+---
+
 ## [v0.1.0] - 2025-01-01
 
 ### 🚀 New Features

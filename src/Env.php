@@ -2,9 +2,7 @@
 
 namespace Ilias\Helper;
 
-use Ilias\Helper\Interceptors\Interceptor;
-
-class Env extends Interceptor
+class Env
 {
     private static array $env;
 

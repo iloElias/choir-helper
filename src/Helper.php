@@ -2,13 +2,24 @@
 
 namespace Ilias\Helper;
 
-use Ilias\Helper\Interceptors\Interceptor;
-
-class Helper extends Interceptor
+class Helper
 {
+    private static bool $helper_booted = false;
+
     public static function rootDir()
     {
         return __DIR__ . '/../';
+    }
+
+    public static function boot()
+    {
+        if (self::$helper_booted) {
+            return;
+        }
+
+        include_once App::rootDir() . 'index.php';
+
+        self::$helper_booted = true;
     }
 
     public static function dirFiles(

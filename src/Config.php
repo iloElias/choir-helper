@@ -2,9 +2,7 @@
 
 namespace Ilias\Helper;
 
-use Ilias\Helper\Interceptors\Interceptor;
-
-class Config extends Interceptor
+class Config
 {
     private static array $config;
 

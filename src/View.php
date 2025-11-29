@@ -2,9 +2,7 @@
 
 namespace Ilias\Helper;
 
-use Ilias\Helper\Interceptors\Interceptor;
-
-class View extends Interceptor
+class View
 {
     public static function view(string $view, array $data = [])
     {
