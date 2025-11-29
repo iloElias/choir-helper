@@ -26,6 +26,27 @@ This format follows a lightweight and clear structure suitable for personal libr
 
 ---
 
+## [v0.1.2] - 2025-11-29
+
+### 🚀 New Features
+
+- N/A
+
+### 🐛 Fixes
+
+- N/A
+
+### 🔧 Internal / Refactor
+
+- Removed autoload requirement from `index.php` to streamline initialization
+- Updated `Helper::boot()` to use `self::rootDir()` instead of `App::rootDir()` for consistency
+
+### 📝 Notes
+
+- Version bumped from 0.1.1 to 0.1.2
+
+---
+
 ## [v0.1.1] - 2025-11-29
 
 ### 🚀 New Features

@@ -3,7 +3,7 @@
     "description": "Helper library with various utilities",
     "type": "library",
     "license": "MIT",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "autoload": {
         "psr-4": {
             "Ilias\\Helper\\": "src/"
